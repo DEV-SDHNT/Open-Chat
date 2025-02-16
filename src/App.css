@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+body{
+    background-color: #000;
+    color: #0f0;
+    margin: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app{
+    background-color: #000;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1{
+    font-family: 'Times New Roman', Times, serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.chat-container{
+    /* border:#0f0 solid ; */
+    padding: 10px;
+    height: 65vh;
+    width: 100%;
+    display: block;
+    justify-self: center;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background-color: #000;
+    flex-wrap: wrap;
 }
-
-.App-link {
-  color: #61dafb;
+.msg-container{
+    margin-bottom:10px;
+    /* text-align: right; */
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.message{
+    background:linear-gradient(15deg,#0b0 ,#464 ),  no-repeat;
+    background-size: 300%;
+    border-radius:20px;
+    color:#fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    padding:12px 25px; 
+    width:auto;
+    margin-bottom:10px;
+    text-wrap:inherit;
+    /* box-shadow: 0 0 10px green; */
+    /* border: #0a0 solid 1px; */
+    animation: grad 01s infinite alternate ease;
+}
+@keyframes grad {
+    from{
+        background-position: 0%;
+    }
+    to{
+        background-position: 100%;
+    }
+    
+}
+.codesnip{
+    /* background:#0c0c0c; */
+    padding:10px;
+    border-radius:14px;
+    color:#0f0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    box-shadow: 0 0 10px green;
+    border: #0a0 solid 1px;
+}
+form{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    /* align-items: center; */
+    /* background-color: red; */
+    /* justify-items: space-around; */
+    /* flex-wrap: wrap; */
+}
+.txt-box{
+    position: relative;
+    background-color: #000;
+    width: 90%;
+    height: 20px;
+    border: #0a0 solid 2px;
+    color: #ccc;
+    font-weight: 700;
+    font-size: 16px;
+    padding:10px;
+    resize:vertical;
+    scrollbar-width: none;
+    border-radius:20px;
+    margin-bottom: 10px; 
+}
+button{
+    position: relative;
+    background-color: #0c0;
+    border: none;
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 50px;
+    font-weight: bolder;
+    font-size: 25px;
+    box-shadow: #0a0 0 0 10px;
+    color: #000;
+}
+.code-chk{
+    position: relative;
+    background-color:transparent;
+    /* left: 20px; */
+    padding: 10px;
+}
+.chk-box{
+    border: solid black;
+    border-radius: 10px;
 }
