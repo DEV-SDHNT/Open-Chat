@@ -4,13 +4,13 @@ const socketIo=require('socket.io');
 const cors=require('cors');
 
 const app=express();
-app.use(cors({origin:"https://open-chats.onrender.com"}));
+//app.use(cors({origin:"https://open-chats.onrender.com"}));
 
 const server=http.createServer(app);
 
 const io=socketIo(server,{
     cors:{
-        origin:"*",
+        origin:"https://open-chats.onrender.com",
         methods:['GET','POST'],
     },
 });
