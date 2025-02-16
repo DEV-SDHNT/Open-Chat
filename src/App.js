@@ -3,7 +3,7 @@ import "./App.css";
 import React,{useState,useEffect} from 'react';
 import io from 'socket.io-client';
 
-const ENDPOINT="http://localhost:5000";
+const ENDPOINT="https://open-chat-nqse.onrender.com";
 const sessionId=Math.random().toString(36).substring(2,9);
 const App=()=>{
     const [socket,setSocket]=useState(null);
