@@ -45,7 +45,7 @@ h1{
     translate: -50%;
     height: 77vh;
     width: 99%;
-    display: flex;
+    display: block;
     border-radius: 20px;
     overflow-y: auto;
     overflow-x: hidden;
