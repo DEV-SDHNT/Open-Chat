@@ -64,6 +64,7 @@ h1{
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 80%;
     color: #0a0;
     translate: -50% -8%;
     text-align: justify;
