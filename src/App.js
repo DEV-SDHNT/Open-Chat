@@ -36,7 +36,17 @@ const App=()=>{
     return (
       <div className="app" style={{margin:'0 auto',width:'90%',textAlign:'center'}}>
         <h1>OpenChat</h1>
+        <div className="info-block">
         <button className="info">i</button>
+        <div className="tip">
+          <h3>Just a simple chat app project.</h3>
+          <h4>Things to know before use!</h4>
+          <li>This project have no database so the chats are not saved anywhere. Just a refresh will delete every message on your side.</li>
+          <li>Also it is OpenChat so if you send a message then it is visible to everyone who are live at that instance.</li>
+          <li>Good thing is you can talk to anyone from anywhere anonymously.<br></br>(!! Area69  will still know !!)</li>
+          <h4>Enjoy your talk if you find someone!</h4>
+        </div>
+        </div>
         <div className="chat-container">
           {chat.map((msg,index)=>(
             <div className="msg-container" key={index} style={{ textAlign:msg.senderId===sessionId? 'left':'right',}}>
