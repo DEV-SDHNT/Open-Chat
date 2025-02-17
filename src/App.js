@@ -1,5 +1,4 @@
 import "./App.css";
-// import axios from "axios";
 import React,{useState,useEffect} from 'react';
 import io from 'socket.io-client';
 
@@ -44,6 +43,7 @@ const App=()=>{
           <li>This project have no database so the chats are not saved anywhere. Just a refresh will delete every message on your side.</li>
           <li>Also it is OpenChat so if you send a message then it is visible to everyone who are live at that instance.</li>
           <li>Good thing is you can talk to anyone from anywhere anonymously.<br></br>(!! Area69  will still know !!)</li>
+          <li>You can also say it an Universal Comment Section.</li>
           <h4>Enjoy your talk if you find someone!</h4>
         </div>
         </div>
