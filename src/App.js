@@ -3,7 +3,7 @@ import "./App.css";
 import React,{useState,useEffect} from 'react';
 import io from 'socket.io-client';
 
-const ENDPOINT="https://open-chat-nqse.onrender.com";
+const backendAPI="https://open-chat-nqse.onrender.com";
 const sessionId=Math.random().toString(36).substring(2,9);
 const App=()=>{
     const [socket,setSocket]=useState(null);
@@ -11,7 +11,7 @@ const App=()=>{
     const [isCode,setIsCode]=useState(false);
     const [chat,setChat]=useState([]);
     useEffect(()=>{
-      const newSocket=io(ENDPOINT);
+      const newSocket=io(backendAPI);
       setSocket(newSocket);
 
       newSocket.on('chat message',(msg)=>{
@@ -36,12 +36,8 @@ const App=()=>{
     return (
       <div className="app" style={{margin:'0 auto',width:'90%',textAlign:'center'}}>
         <h1>OpenChat</h1>
-        <div 
-          className="chat-container"
-          style={{
-            scrollbarGutter:'unset',
-          }}
-        >
+        <button className="info">i</button>
+        <div className="chat-container">
           {chat.map((msg,index)=>(
             <div className="msg-container" key={index} style={{ textAlign:msg.senderId===sessionId? 'left':'right',}}>
               {msg.type==='code'?
@@ -70,18 +66,7 @@ const App=()=>{
             value={message}
             onChange={(e)=>setMessage(e.target.value)}
           ></textarea>
-          <button type="submit" style={{padding:'10px 10px'}}>></button>
-          <div className="code-chk">
-            <label>
-              Code
-              <input
-              className="chk-box"
-              type="checkbox"
-              checked={isCode}
-              onChange={()=>setIsCode(prev=>!prev)}
-              /> 
-            </label>
-          </div>
+          <button type="submit" className="send-btn">Send</button><br></br>
         </form>
       </div>
     );
