@@ -9,8 +9,10 @@ body{
     /* background-color: #f00; */
 }
 h1{
-    color: #0f0;
-    font-family: 'Times New Roman', Times, serif;
+    color: green;
+				font-style: italic;
+				font-weight: 10;
+    font-family: 'Cursive';
     animation: opening forwards 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 @keyframes opening {
@@ -41,13 +43,15 @@ h1{
     border: none;
     font-family: 'Courier New', Courier, monospace;
     border-radius: 10px;
-    box-shadow: #0a0 0 0 10px;
+    box-shadow: #040 0 0 10px;
     z-index: 2;
+				opacity: 0.2;
     cursor: pointer;
     transition: transform 0.2s ease;
 }
 .info:hover{
     transform: scale(1.5);
+				opacity: 1;
     /* animation: openup 2s forwards; */
 }
 @keyframes openup {
@@ -67,7 +71,7 @@ h1{
     width: 80%;
     color: #0a0;
     translate: -50% -8%;
-    text-align: justify;
+    text-align: left;
     background-color: transparent;
     opacity: 0;
     backdrop-filter: blur(1px);
@@ -110,7 +114,7 @@ h4{
     font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
     padding:12px 25px; 
-    width:auto;
+    width:fit-content;
     margin-bottom:10px;
     text-wrap:inherit;
     /* box-shadow: 0 0 10px green; */
@@ -124,7 +128,6 @@ h4{
     to{
         background-position: 100%;
     }
-    
 }
 .codesnip{
     /* background:#0c0c0c; */
@@ -136,37 +139,48 @@ h4{
     box-shadow: 0 0 10px green;
     border: #0a0 solid 1px;
 }
+
 form{
     position: fixed;
-    width: 100%;
+    width: 100vw;
+				background: none;
     bottom: 0;
-    left: 0;
+				left: 0;
+				gap:0px;
     display: flex;
-    align-items: center;
-    gap: 10px;
+				align-content: center;
+				align-items: center;
+				justify-content: space-evenly;
 }
+
 .txt-box{
-    flex: 1;
-    height: 30px;
-    width: 80%;
+				grid-column: 1/2;
+				grid-row: 1/1;
+    height:15px;
+    width: 90vw;
+				scrollbar-width:none;
     resize: vertical;
-    padding: 8px;
+    padding: 15px;
     background-color: #000;
-    border: #0a0 solid;
-    border-radius: 30px;
+    border: #0a0 solid 2px;
     color:#0a0;
+				text-emphasis-color: #0a0;
+				margin: 0 0 0 0;
 }
+
 .send-btn{
-    bottom: 10px;
-    height: 40px;
-    padding:0 15px;
-    text-align: center;
-    background-color: #0f0;
-    border: none;
+				grid-column: 2/2;
+				grid-row: 1/1;
+    height: max-content;
+				width:max-content;
+    padding:15px;
+    background: #0a0;
     font-weight: bold;
-    border-radius: 30px;
-    box-shadow: #0b0 0 0 10px;
+				color:black;
+				border: #0a0 solid 2px;
+				margin: 0 0 0 0;
 }
+
 .code-chk{
     position: fixed;
     background-color:transparent;
