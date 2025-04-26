@@ -51,19 +51,19 @@ const App=()=>{
 												</div>
 												<div className="chat-container">
 																{chat.map((msg,index)=>(
-																				<div className="msg-container" key={index} style={{ textAlign:msg.senderId===sessionId? 'left':'right',}}>
+																				<div className="msg-container" key={index} style={{ justifyContent:msg.senderId===sessionId? 'left':'right',}}>
 																								{msg.type==='code'?
 																									(<div className="codesnip" style={{
-																																			justifyContent:msg.senderId===sessionId? 'left':'right',
-																																			borderEndEndRadius:msg.senderId===sessionId? '15px':'0px',
-																																			borderEndStartRadius:msg.senderId===sessionId?'0px':'15px',
+																																			justifyContent:msg.senderId===sessionId ? 'left':'right',
+																																			borderEndEndRadius:msg.senderId===sessionId ? '25px':'20px',
+																																			borderEndStartRadius:msg.senderId===sessionId ?'10px':'15px'
 																															}}>
 																														{msg.content}
 																										</div>)
 																									:(<div className="message" style={{
-																																				justifySelf:msg.senderId===sessionId? 'left':'right',
-																																				borderEndEndRadius:msg.senderId===sessionId? '20px':'0px',
-																																				borderEndStartRadius:msg.senderId===sessionId?'0px':'20px'}}>
+																																				justifyContent:msg.senderId===sessionId ? 'left':'right',
+																																				borderEndEndRadius:msg.senderId===sessionId ? '20px':'0px',
+																																				borderEndStartRadius:msg.senderId===sessionId ?'0px':'20px',}}>
 																															{msg.content}
 																											</div>
 																										)}

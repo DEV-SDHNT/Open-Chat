@@ -93,7 +93,7 @@ h4{
     translate: -50%;
     height: 77vh;
     width: 99%;
-    display: block;
+				display:block;
     border-radius: 20px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -104,22 +104,22 @@ h4{
 }
 .msg-container{
     margin-bottom:10px;
-    /* text-align: right; */
+    text-align: right;
+				display:flex;
 }
 .message{
-    background:linear-gradient(15deg,#0b0 ,#464 ),  no-repeat;
+    background:linear-gradient(15deg,#0b0 ,#060 ),  no-repeat;
     background-size: 300%;
     border-radius:20px;
-    color:#fff;
     font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
     padding:12px 25px; 
-    width:fit-content;
+    width:max-content;
     margin-bottom:10px;
     text-wrap:inherit;
     /* box-shadow: 0 0 10px green; */
     /* border: #0a0 solid 1px; */
-    animation: grad 01s infinite alternate ease;
+    animation: grad 0.1s infinite alternate ease;
 }
 @keyframes grad {
     from{
