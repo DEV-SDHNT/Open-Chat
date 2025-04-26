@@ -2,8 +2,8 @@ import "./App.css";
 import React,{useState,useEffect} from 'react';
 import io from 'socket.io-client';
 
-const backendAPI="http://localhost:5000";
-//const backendAPI="https://open-chat-nqse.onrender.com";
+//const backendAPI="http://localhost:5000";
+const backendAPI="https://open-chat-nqse.onrender.com";
 const sessionId=Math.random().toString(36).substring(2,9);
 const App=()=>{
     const [socket,setSocket]=useState(null);
