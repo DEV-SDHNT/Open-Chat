@@ -4,27 +4,31 @@ const socketIo=require('socket.io');
 const cors=require('cors');
 
 const app=express();
-//app.use(cors({origin:"https://open-chats.onrender.com"}));
+app.use(cors({origin:"https://open-chats.onrender.com"}));
 
 const server=http.createServer(app);
 
 const io=socketIo(server,{
     cors:{
+		//origin:"http://0.0.0.0:3000",
         origin:"https://open-chats.onrender.com",
         methods:['GET','POST'],
     },
 });
 
 const PORT=process.env.PORT||5000;
+user_count=0;
 io.on('connection',(socket)=>{
-    console.log("User connected");
+    user_count+=1;
+    console.log(`Users connected :${user_count}`);
 
     socket.on('chat message',(msg)=>{
         io.emit('chat message',msg);
     });
-
+    
     socket.on('disconnect',()=>{
+        user_count-=1;
         console.log('User disconnected');
     });
 });
-server.listen(PORT,()=> console.log(`Server running on ${PORT}.`));
+server.listen(PORT,"0.0.0.0",()=> console.log(`Server running on ${PORT}.`));
