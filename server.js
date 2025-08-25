@@ -10,7 +10,7 @@ const server=http.createServer(app);
 
 const io=socketIo(server,{
     cors:{
-		//origin:"http://0.0.0.0:3000",
+		//origin:"http://localhost:3000",
         origin:"https://open-chats.onrender.com",
         methods:['GET','POST'],
     },
@@ -28,6 +28,7 @@ io.on('connection',(socket)=>{
     
     socket.on('disconnect',()=>{
         user_count-=1;
+        console.log(`Users connected:${user_count}`);
         console.log('User disconnected');
     });
 });
