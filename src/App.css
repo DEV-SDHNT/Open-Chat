@@ -91,6 +91,7 @@ form{
     box-shadow: #444 2px 2px 0px;
 	text-emphasis-color: #222;
 	margin: 0 0 0 0;
+    font-family: 'Indie Flower',monospace;
 }
 
 .send-btn{
