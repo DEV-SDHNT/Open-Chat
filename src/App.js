@@ -34,43 +34,43 @@ const App=()=>{
     };
     
     return (
-		<div className="app" style={{margin:'0 auto',width:'90%',textAlign:'center'}}>
-			<div className="chat-container">
-				{chat.map((msg,index)=>(
-					<div className="msg-container" key={index} style={{ justifyContent:msg.senderId===sessionId? 'right':'left',}}>
-						{msg.type==='code'?
-						 (
+	<div className="app" style={{margin:'0 auto',width:'90%',textAlign:'center'}}>
+	    <div className="chat-container">
+		{chat.map((msg,index)=>(
+		    <div className="msg-container" key={index} style={{ justifyContent:msg.senderId===sessionId? 'right':'left',}}>
+			{msg.type==='code'?
+			 (
                              <div className="codesnip" style={{
-								      justifyContent:msg.senderId===sessionId ? 'left':'right',
-								      borderEndEndRadius:msg.senderId===sessionId ? '25px':'20px',
-								      borderEndStartRadius:msg.senderId===sessionId ?'10px':'15px'
-							      }}>
-							     {msg.content}
-						     </div>
+				      justifyContent:msg.senderId===sessionId ? 'left':'right',
+				      borderEndEndRadius:msg.senderId===sessionId ? '25px':'20px',
+				      borderEndStartRadius:msg.senderId===sessionId ?'10px':'15px'
+				  }}>
+				 {msg.content}
+			     </div>
                          )
-						 :(
+			 :(
                              <div className="message" style={{
-									  justifyContent:msg.senderId===sessionId ? 'left':'right',
-									  borderEndEndRadius:msg.senderId===sessionId ? '0px':'20px',
-									  borderEndStartRadius:msg.senderId===sessionId ?'20px':'0px',}}>
-							     {msg.content}
-						     </div>
-						 )
+				      justifyContent:msg.senderId===sessionId ? 'left':'right',
+				      borderEndEndRadius:msg.senderId===sessionId ? '3px':'25px',
+				      borderEndStartRadius:msg.senderId===sessionId ?'25px':'3px',}}>
+				 {msg.content}
+			     </div>
+			 )
                         }
-					</div>
-				))}
-			</div>
-			<form onSubmit={sendMessage}>
-				<textarea
-					className="txt-box"
-					rows="3"
-					placeholder="Type your message here ..."
-					value={message}
-					onChange={(e)=>setMessage(e.target.value)}
-				></textarea>
-				<button type="submit" className="send-btn">Send</button><br></br>
-			</form>
-		</div>
+		    </div>
+		))}
+	    </div>
+	    <form onSubmit={sendMessage}>
+		<textarea
+		    className="txt-box"
+		    rows="3"
+		    placeholder="Type your message here ..."
+		    value={message}
+		    onChange={(e)=>setMessage(e.target.value)}
+		></textarea>
+		<button type="submit" className="send-btn">Send</button><br></br>
+	    </form>
+	</div>
     );
 };
 export default App;
